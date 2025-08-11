@@ -15,6 +15,7 @@
     --bg-primary: #0a0a0a;
     --bg-secondary: #111111;
     --bg-dark: #000000;
+    --card-bg: #151515;
     --border-color: #2d3748;
     --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
     --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.4), 0 2px 4px -2px rgb(0 0 0 / 0.4);
@@ -1230,7 +1231,7 @@ section::before {
 }
 
 .contact-form {
-    background: white;
+    background: var(--card-bg);
     padding: 2rem;
     border-radius: 1rem;
     box-shadow: var(--shadow-md);
@@ -1262,6 +1263,41 @@ section::before {
 .form-group textarea {
     resize: vertical;
     min-height: 120px;
+}
+
+/* Formspree form default styles (labels, inputs inside labels) */
+.contact-form form label {
+    display: block;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.contact-form form label input,
+.contact-form form label textarea,
+.contact-form form input,
+.contact-form form textarea {
+    display: block;
+    width: 100%;
+    margin-top: 0.5rem;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    background: var(--bg-secondary);
+    color: var(--text-primary);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form form input:focus,
+.contact-form form textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+}
+
+.contact-form form button[type="submit"] {
+    margin-top: 0.5rem;
 }
 
 /* Footer */
@@ -1436,4 +1472,4 @@ section::before {
 /* Smooth scrolling for anchor links */
 html {
     scroll-padding-top: 80px;
-} 
+}
